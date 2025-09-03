@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional Portfolio Design System 
+Modern, clean aesthetic with sophisticated color palette and typography
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base Colors - Light Theme */
+    --background: 0 0% 98%;
+    --foreground: 225 15% 15%;
+
+    /* Card System */
+    --card: 0 0% 100%;
+    --card-foreground: 225 15% 15%;
+
+    /* Popover System */
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 15% 15%;
+
+    /* Brand Colors */
+    --primary: 245 75% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 245 75% 70%;
+
+    /* Secondary System */
+    --secondary: 220 15% 96%;
+    --secondary-foreground: 225 15% 15%;
+
+    /* Muted System */
+    --muted: 220 15% 94%;
+    --muted-foreground: 225 15% 45%;
+
+    /* Accent System */
+    --accent: 245 75% 95%;
+    --accent-foreground: 245 75% 15%;
+
+    /* Status Colors */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 120 60% 50%;
+    --warning: 45 90% 60%;
+
+    /* Border & Input */
+    --border: 220 15% 88%;
+    --input: 220 15% 94%;
+    --ring: 245 75% 60%;
+
+    /* Design Tokens */
+    --radius: 0.75rem;
+    --shadow-elegant: 0 10px 30px -10px hsl(245 75% 60% / 0.15);
+    --shadow-glow: 0 0 40px hsl(245 75% 70% / 0.2);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(245 75% 60%), hsl(245 75% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(245 75% 60%) 0%, hsl(260 75% 65%) 50%, hsl(275 70% 70%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 98%), hsl(220 15% 96%));
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Base Colors - Dark Theme */
+    --background: 225 25% 8%;
+    --foreground: 220 15% 92%;
+
+    /* Card System */
+    --card: 225 25% 10%;
+    --card-foreground: 220 15% 92%;
+
+    /* Popover System */
+    --popover: 225 25% 10%;
+    --popover-foreground: 220 15% 92%;
+
+    /* Brand Colors */
+    --primary: 245 75% 65%;
+    --primary-foreground: 225 25% 8%;
+    --primary-glow: 245 75% 75%;
+
+    /* Secondary System */
+    --secondary: 225 25% 15%;
+    --secondary-foreground: 220 15% 92%;
+
+    /* Muted System */
+    --muted: 225 25% 12%;
+    --muted-foreground: 220 15% 60%;
+
+    /* Accent System */
+    --accent: 245 75% 15%;
+    --accent-foreground: 245 75% 90%;
+
+    /* Status Colors */
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 220 15% 92%;
+    --success: 120 60% 55%;
+    --warning: 45 90% 65%;
+
+    /* Border & Input */
+    --border: 225 25% 18%;
+    --input: 225 25% 15%;
+    --ring: 245 75% 65%;
+
+    /* Shadows for Dark Mode */
+    --shadow-elegant: 0 10px 30px -10px hsl(245 75% 20% / 0.3);
+    --shadow-glow: 0 0 40px hsl(245 75% 50% / 0.15);
+    
+    /* Gradients for Dark Mode */
+    --gradient-primary: linear-gradient(135deg, hsl(245 75% 65%), hsl(245 75% 75%));
+    --gradient-hero: linear-gradient(135deg, hsl(245 75% 65%) 0%, hsl(260 75% 70%) 50%, hsl(275 70% 75%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(225 25% 8%), hsl(225 25% 10%));
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero Button Variants */
+  .btn-hero-primary {
+    @apply bg-gradient-to-r from-primary via-primary-glow to-primary;
+    @apply text-primary-foreground font-semibold px-8 py-4 rounded-xl;
+    @apply shadow-lg hover:shadow-xl transform hover:scale-105;
+    @apply transition-all duration-300 ease-in-out;
+    @apply border border-primary/20 hover:border-primary/40;
+  }
+  
+  .btn-hero-secondary {
+    @apply bg-transparent border-2 border-primary text-primary;
+    @apply font-semibold px-8 py-4 rounded-xl;
+    @apply hover:bg-primary hover:text-primary-foreground;
+    @apply transition-all duration-300 ease-in-out;
+    @apply hover:shadow-lg transform hover:scale-105;
+  }
+
+  /* Card Hover Effects */
+  .card-hover {
+    @apply transition-all duration-300 ease-in-out;
+    @apply hover:shadow-xl hover:shadow-primary/10;
+    @apply hover:-translate-y-2 hover:scale-[1.02];
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-primary-glow to-primary;
+    @apply bg-clip-text text-transparent;
+  }
+
+  /* Section Padding */
+  .section-padding {
+    @apply py-20 px-4 md:px-8 lg:px-16;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Floating Elements */
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Fade In Animation */
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { 
+      opacity: 0; 
+      transform: translateY(30px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  /* Slide In Animation */
+  .slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+  
+  @keyframes slideInLeft {
+    from { 
+      opacity: 0; 
+      transform: translateX(-50px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateX(0); 
+    }
+  }
+
+  /* Navigation Active Link */
+  .nav-link-active {
+    @apply text-primary font-semibold;
+    position: relative;
+  }
+  
+  .nav-link-active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+    border-radius: 1px;
+  }
+}
