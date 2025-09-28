@@ -23,7 +23,7 @@ const ProjectsSection = () => {
       image: projectSocialPedia,
       technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'Express'],
       github: 'https://github.com/yourusername/socialpedia',
-      live: 'https://socialpedia-demo.vercel.app',
+      live: 'https://snr-elder.vercel.app/',
       featured: true
     },
     {
