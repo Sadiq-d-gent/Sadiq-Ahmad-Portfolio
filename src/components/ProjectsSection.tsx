@@ -14,7 +14,7 @@ const ProjectsSection = () => {
       image: projectGurukul,
       technologies: ['React', 'Next.js', 'TypeScript', 'MongoDB', 'Tailwind CSS'],
       github: 'https://github.com/yourusername/gurukul',
-      live: 'https://gurukul-demo.vercel.app',
+      live: 'https://github.com/Sadiq-d-gent',
       featured: true
     },
     {
@@ -31,7 +31,7 @@ const ProjectsSection = () => {
       description: 'A comprehensive data visualization dashboard with real-time analytics, interactive charts, and customizable reports for business intelligence.',
       image: projectDashboard,
       technologies: ['React', 'TypeScript', 'Chart.js', 'Prisma', 'PostgreSQL'],
-      github: 'https://github.com/yourusername/dashboard',
+      github: 'https://github.com/Sadiq-d-gent/React-Crypto-Dashboard',
       live: 'https://dashboard-demo.vercel.app',
       featured: false
     },
@@ -40,7 +40,7 @@ const ProjectsSection = () => {
       description: 'An interactive storytelling platform where users can create, share, and discover engaging stories with multimedia content and collaborative features.',
       image: projectDashboard, // Using dashboard image as placeholder
       technologies: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS'],
-      github: 'https://github.com/yourusername/story-sail',
+      github: 'https://github.com/Sadiq-d-gent/Snr-Elder',
       live: 'https://story-sail-demo.vercel.app',
       featured: false
     },
@@ -49,7 +49,7 @@ const ProjectsSection = () => {
       description: 'A collaborative design tool inspired by Figma, featuring real-time editing, vector graphics, and team collaboration capabilities.',
       image: projectGurukul, // Using gurukul image as placeholder
       technologies: ['React', 'Canvas API', 'WebSocket', 'Node.js', 'Redis'],
-      github: 'https://github.com/yourusername/figpro',
+      github: 'https://github.com/Sadiq-d-gent/AlphaLog',
       live: 'https://figpro-demo.vercel.app',
       featured: false
     }
